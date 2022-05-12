@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 
-function Nav () {
-    const categories = ['About me', 'Projects', 'Contact', 'Resume'];
-
-    const [currentCategory, setCurrentCategory] = useState(categories[0]);
+function Nav (props) {
+    const {
+        categories = [],
+        currentCategory,
+        setCurrentCategory
+    } = props;
     const [navbarShowing, setNavbarShowing] = useState(false);
 
     return (
-        <header className="d-flex navbar">
+        <header className="d-flex navbar justify-content-start m-2 mx-3">
                 <button className='hamburger' onClick={() => setNavbarShowing(!navbarShowing)}>
                     <div></div><div></div><div></div>
                 </button>
                 {navbarShowing ? (
                     <div>
-                    <ul className='navbar-nav flex-row'>
-                    {categories.map((category) => (
-                        <li className={`mx-2 nav-item ${
-                            currentCategory === category && 'active'}`} key={category}>
-                            <span onClick={() => {
-                                setCurrentCategory(category);
-                                }}>
-                                {category}
-                            </span>
-                        </li>
-                    ))}
-                    </ul>
+                        <ul className='navbar-nav flex-row'>
+                        {categories.map((category) => (
+                            <li className={`mx-2 nav-item ${
+                                currentCategory === category && 'active'}`} key={category}>
+                                <span onClick={() => {
+                                    setCurrentCategory(category);
+                                    }}>
+                                    {category}
+                                </span>
+                            </li>
+                        ))}
+                        </ul>
                     </div>
                 ) : (<></>)}
         </header>
