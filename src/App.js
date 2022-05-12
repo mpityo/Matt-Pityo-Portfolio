@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   const categories = ['About me', 'Projects', 'Contact', 'Resume'];
@@ -16,7 +17,7 @@ function App() {
       />
       {currentCategory === 'About me' && <About />}
       {currentCategory === 'Projects' && <></>}
-      {currentCategory === 'Contact' && <></>}
+      {currentCategory === 'Contact' && <Contact />}
       {currentCategory === 'Resume' && <></>}
     </div>
   );
