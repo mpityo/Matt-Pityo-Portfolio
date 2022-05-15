@@ -11,25 +11,32 @@ function Projects () {
             description: 'Share your thoughts on movies to share with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.',
             featured: true
         },
-        {}
+        {
+            name: 'Movie Vision',
+            github: 'movie-vision',
+            deployment: 'https://movie-vision-211.herokuapp.com/',
+            tools: ['Javascript', 'Express', 'Node', 'SQL', 'Sequelize', 'QAuth', 'Handlebars (front end architecture)'],
+            imgPath: 'movie-vision.png',
+            description: 'Share your thoughts on movies to share with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.',
+            featured: false
+        }
     ]);
 
-    const featuredProjects = projects.filter((project) => project.featured);
-
     return (
-        <section className="mx-4">
+        <section className="mx-4">  
             <div id="project-header">
                 <h1>Projects</h1>
                 <h6>Check them out!</h6>
             </div>
-            <div id="featured-projects" className="">
-                <h3>Featured</h3>
+            <div id="projects" className="">
                 <div className="project-wrapper d-flex" id="featured-prj-wrapper">
-                    {featuredProjects.map(({ name, github, deployment, tools, imgPath, description }) => (
-                        <div className="project d-flex flex-wrap mw-100">
-                            <img className="flex-row img-fluid img-thumbnail" src={`./assets/projects/${imgPath}`} alt="" />
-                            <div className="flex-row">
-                                <h5 className='card-title mb-0'>{name}</h5>
+                    {projects.map(({ name, github, deployment, tools, imgPath, description, featured }) => (
+                        <div className="project flex-row d-flex flex-wrap p-2 mb-3">
+                            <div className='flex-row flex-wrap'>
+                                <img src={`./assets/projects/${imgPath}`} alt="" />
+                            </div>
+                            <div className="flex-row flex-wrap">
+                                <h5 className='card-title mb-0'>{name} {featured && <h6>Featured!</h6>}</h5>
                                 <div className='mb-2 tool-wrapper'>
                                     {tools.map((tool) => (
                                         <a href={`#${tool}`} className='card-subtitle text-muted badge'>{tool}</a>

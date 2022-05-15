@@ -30,3 +30,21 @@
 #contact-form > * {
   margin-top: .25rem;
 }
+
+.project {
+  background-color: rgba(216, 216, 216, .5);
+  width: 100%;
+}
+.project-wrapper {
+  flex-wrap: wrap;
+}
+
+.project img {
+  width: 100%;
+}
+
+@media (min-width: 475px) {
+  .project img {
+    /* width: 40%; */
+  }
+}
