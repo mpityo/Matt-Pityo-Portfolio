@@ -26,6 +26,12 @@
   background-color: rgba(255, 255, 255, .75);
   border-radius: 1rem;
 }
+.bio-img {
+  margin: auto;
+  max-height: 50%;
+  max-width: 50%;
+  border-radius: 75%;
+}
 
 #contact-form > * {
   margin-top: .25rem;
@@ -41,6 +47,11 @@
 
 .project img {
   width: 100%;
+}
+.featured {
+  background-color: red;
+  position: absolute;
+  display: flex;
 }
 
 @media (min-width: 475px) {
