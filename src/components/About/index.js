@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 function About() {
   return (
     <section className="mx-4 about">
-      <h1>Matt Pityo</h1>
-      <div className="d-flex flex-wrap about-container mt-5">
+      <h1 className="text-align">Matt Pityo</h1>
+      <div className="d-flex flex-wrap about-container mt-1">
         <div className="flex-row bio-img-container">
           <img
             className="img-fluid rounded bio-img"

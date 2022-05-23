@@ -16,7 +16,7 @@ function SingleProject(props) {
         {/* image */}
         <div className="flex-row flex-wrap prj-img-container col-sm-4 col-md-12" onClick={() => setExpanded(!expanded)}>
           <img
-            className="prj-img img-fluid"
+            className={`prj-img img-fluid ${featured && 'featured-prj'}`}
             src={`./assets/projects/${imgPath}`}
             alt=""
           />

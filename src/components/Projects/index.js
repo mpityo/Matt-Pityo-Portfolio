@@ -38,7 +38,7 @@ function Projects() {
         ],
         imgPath: "movie-vision.png",
         description:
-          "Second group project. Share your thoughts on movies to share with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.",
+          "Second group project. Share your thoughts on movies with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.",
         featured: true,
     },
     {
@@ -143,13 +143,13 @@ function Projects() {
 
   return (
     <section className="mx-4">
-      <div id="project-header">
+      <div className="text-align">
         <h1>Projects</h1>
         <h4>Let my experience speak for itself...</h4>
         <h6>(click on any technology of interest to see projects with only that)</h6>
       </div>
       {filtered && (
-          <div className="current-filter"><span className="close" onClick={removeFilter}>X</span>{filtered}</div>
+          <div className="current-filter m-auto"><span className="close" onClick={removeFilter}>X</span>{filtered}</div>
       )}
       <div id="projects" className="">
           {/* all projects */}
