@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Nav (props) {
     const {
@@ -6,7 +6,12 @@ function Nav (props) {
         currentCategory,
         setCurrentCategory
     } = props;
-    const [navbarShowing, setNavbarShowing] = useState(false);
+    // set current state of the hamburger nav bar, default is true
+    const [navbarShowing, setNavbarShowing] = useState(true);
+
+    useEffect(() => {
+        document.title = `${currentCategory} - Matt Pityo Portfolio`;
+    }, [currentCategory]);
 
     return (
         <header className="d-flex navbar justify-content-start m-2 mx-3">
