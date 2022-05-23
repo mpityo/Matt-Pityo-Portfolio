@@ -1,3 +1,27 @@
+:root {
+  --primary-color: #37322F;
+  --secondary-color: #BF211E;
+  --tertiary-color: #5FBFA2;
+  --link-color: #19849F;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+.close {
+  border-radius: 10px;
+  background-color: lightgrey;
+  margin: 5px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+/* NAV */
+header {
+  width: fit-content;
+  border-radius: 25px;
+}
 .hamburger {
   border-radius: 50%;
   height: 3rem;
@@ -6,61 +30,111 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-color);
+}
+.hamburger:hover {
+  background-color: #37322fae;
 }
 .hamburger > * {
   height: 10px;
   width: 24px;
-  border-top: 2px solid black;
+  border-top: 2px solid rgba(255, 255, 255, 0.473);
   margin: auto;
 }
 .nav-item {
   cursor: pointer;
   color: rgb(168, 168, 168);
 }
-.nav-item:hover,
-.active {
-  color: black;
+.nav-item:hover {
+  color: rgba(25, 132, 159, 0.511);
 }
+.active {
+  color: var(--link-color)!important;
+}
+/* END NAV */
 
+/* ABOUT */
+.about {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.about-container {
+  align-items: center;
+  max-width: 90vh;
+  max-height: 90vh;
+  margin: auto;
+}
 .bio {
-  background-color: rgba(255, 255, 255, .75);
   border-radius: 1rem;
 }
-.bio-img {
+.bio-img-container {
   margin: auto;
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 75vh;
+  max-width: 75vh;
   border-radius: 75%;
 }
+/* END ABOUT */
 
+/* CONTACT */
 #contact-form > * {
   margin-top: .25rem;
 }
 form {
-  width: 75vh;
+  max-width: 75vh;
   margin: auto;
 }
+.btn {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+}
+.btn:hover {
+  background-color: #48917b;
+  border-color: #51a78d;
+}
+/* END CONTACT */
 
+/* PROJECTS */
+.current-filter {
+  
+}
 .project {
-  background-color: rgba(216, 216, 216, .5);
+  background-color: white;
 }
 .project-wrapper {
   flex-wrap: wrap;
 }
-
-.prj-img {
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 100%;
-}
 .featured {
-  background-color: red;
-  position: absolute;
-  display: flex;
+  background-color: var(--link-color);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  width: fit-content;
 }
+.tool {
+  border-radius: 50%;
+  background-color: azure;
+  cursor: pointer;
+  margin: 5px;
+}
+.card-link > * {
+  height: 40px;
+  width: 40px;
+  color: var(--link-color);
+}
+.card-link > *:hover {
+  height: 60px;
+  width: 60px;
+  transition: ease-in 300ms;
+}
+/* END PROJECTS */
 
+/* RESUME */
 .resume-container {
+  max-width: 80vh;
+  margin: auto;
 }
+/* END RESUME */
 
 @media (min-width: 475px) {
   .project img {

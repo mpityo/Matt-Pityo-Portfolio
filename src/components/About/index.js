@@ -4,12 +4,14 @@ function About() {
   return (
     <section className="mx-4 about">
       <h1>Matt Pityo</h1>
-      <div className="d-flex flex-wrap about-container">
-        <img
-          className="col-md-4 flex-row img-fluid rounded bio-img"
-          src="./assets/bio-img.jpeg"
-          alt="Matt looking up towards the sky on the beach"
-        ></img>
+      <div className="d-flex flex-wrap about-container mt-5">
+        <div className="col-md-4 flex-row bio-img-container">
+          <img
+            className="img-fluid rounded bio-img"
+            src="./assets/bio-img.jpeg"
+            alt="Matt looking up towards the sky on the beach"
+          ></img>
+        </div>
         <div className="col-md-8 flex-row bio p-3">
           <p>
             I am a full stack developer looking for opportunities to connect and

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Contact () {
     return (
-        <section className="mx-4">
+        <section className="mx-4 mt-5">
             <form>
                 <h1>Contact Me</h1>
                 <h6 className="text-muted mb-3">Fill out the following information to get in touch!</h6>

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Resume () {
   return (
-    <div>
-        <object data="../../../assets/resume.pdf" type="application/pdf">
+    <div className='resume-container mt-5'>
+        <object data="../../../assets/resume.pdf" 
+            type="application/pdf"
+            height='750vh'
+            width='100%'>
             <div className='resume-container'>
                 <p>No online PDF viewer installed 😕</p>
                 <a 
