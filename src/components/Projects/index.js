@@ -91,16 +91,15 @@ function Projects () {
                 <h6>Check them out!</h6>
             </div>
             <div id="projects" className="">
-                <div className="project-wrapper d-flex" id="featured-prj-wrapper">
+                <div className="project-wrapper d-flex flex-wrap">
                     {projects.map(({ name, github, deployment, tools, imgPath, description, featured }) => (
-                        <div className="project flex-row d-flex flex-wrap p-2 mb-3">
-                            <div>
-                            <div className='flex-row flex-wrap'>
-                                <img className='prj-img' src={`./assets/projects/${imgPath}`} alt="" />
+                        <div className="project d-flex flex-wrap p-2 mb-3 col-md-6 col-lg-4 col-xl-3">
+                            <div className='flex-row flex-wrap prj-img-container col-sm-4 col-md-12'>
+                                <img className='prj-img img-fluid' src={`./assets/projects/${imgPath}`} alt="" />
                                 {/* <div className={`${featured && 'featured'}`}> featured</div> */}
                             </div>
-                            <div className="flex-row flex-wrap">
-                                <h5 className='card-title mb-0'>{name} {featured && <h6>Featured!</h6>}</h5>
+                            <div className="flex-row flex-wrap col-sm-8">
+                                <h5 className='card-title mb-0'>{name} {featured && <h5>Featured!</h5>}</h5>
                                 <div className='mb-2 tool-wrapper'>
                                     {tools.map((tool) => (
                                         <span className='card-subtitle text-muted badge'>{tool}</span>
@@ -109,7 +108,6 @@ function Projects () {
                                 <p className='card-text'>{description}</p>
                                 <a href={`https://github.com/mpityo/${github}`} className="card-link" target='_blank' rel="noreferrer">GitHub</a>
                                 <a href={deployment} className="card-link" target='_blank' rel="noreferrer">Deployment</a>
-                            </div>
                             </div>
                         </div>
                     ))}

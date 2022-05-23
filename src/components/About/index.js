@@ -4,7 +4,7 @@ function About() {
   return (
     <section className="mx-4 about">
       <h1>Matt Pityo</h1>
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap about-container">
         <img
           className="col-md-4 flex-row img-fluid rounded bio-img"
           src="./assets/bio-img.jpeg"
