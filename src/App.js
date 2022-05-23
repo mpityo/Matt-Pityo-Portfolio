@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
+import Resume from './components/Resume';
 
 function App() {
   const categories = ['About me', 'Projects', 'Contact', 'Resume'];
@@ -19,7 +20,7 @@ function App() {
       {currentCategory === 'About me' && <About />}
       {currentCategory === 'Projects' && <Projects />}
       {currentCategory === 'Contact' && <Contact />}
-      {currentCategory === 'Resume' && <></>}
+      {currentCategory === 'Resume' && <Resume />}
     </div>
   );
 }

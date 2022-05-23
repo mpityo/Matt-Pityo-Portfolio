@@ -36,15 +36,16 @@
 #contact-form > * {
   margin-top: .25rem;
 }
+form {
+  width: 75vh;
+  margin: auto;
+}
 
 .project {
   background-color: rgba(216, 216, 216, .5);
 }
 .project-wrapper {
   flex-wrap: wrap;
-}
-
-.card-title {
 }
 
 .prj-img {
@@ -56,6 +57,9 @@
   background-color: red;
   position: absolute;
   display: flex;
+}
+
+.resume-container {
 }
 
 @media (min-width: 475px) {
