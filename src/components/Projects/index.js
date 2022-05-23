@@ -155,7 +155,8 @@ function Projects() {
           {/* all projects */}
         <div className="project-wrapper d-flex flex-wrap align-items-start">
           {filteredProjects.map((project) => (
-            <div className="project d-flex flex-wrap p-2 col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="project d-flex flex-wrap p-2 col-xs-12 col-sm-6 col-md-4 col-lg-3"
+              key={project.name}>
                 <SingleProject project={project} filterProjects={filterProjects} />
             </div>
             )

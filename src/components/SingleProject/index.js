@@ -3,7 +3,6 @@ import { FaGithubAlt } from "react-icons/fa";
 import { ImRocket } from "react-icons/im";
 
 function SingleProject(props) {
-    console.log(props);
   const { name, github, deployment, tools, imgPath, description, featured } = props.project;
   const [expanded, setExpanded] = useState(false);
 
