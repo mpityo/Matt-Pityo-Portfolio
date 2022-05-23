@@ -128,7 +128,6 @@ function Projects() {
     },
   ]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
-
   const [filtered, setFiltered] = useState('');
 
   const filterProjects = event => {
@@ -143,8 +142,6 @@ function Projects() {
     setFiltered('');
     setFilteredProjects(projects);
   }
-
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <section className="mx-4">
@@ -161,7 +158,7 @@ function Projects() {
         <div className="project-wrapper d-flex flex-wrap align-items-start">
           {filteredProjects.map((project) => (
             <div className="project d-flex flex-wrap p-2 col-md-6 col-lg-4 col-xl-3">
-                <SingleProject project={project} />
+                <SingleProject project={project} filterProjects={filterProjects} />
             </div>
             )
           )}

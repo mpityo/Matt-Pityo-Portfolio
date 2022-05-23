@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { FaGithubAlt } from "react-icons/fa";
 import { ImRocket } from "react-icons/im";
 
-function SingleProject({project}) {
-  const { name, github, deployment, tools, imgPath, description, featured } = project;
+function SingleProject(props) {
+    console.log(props);
+  const { name, github, deployment, tools, imgPath, description, featured } = props.project;
   const [expanded, setExpanded] = useState(false);
+
+  const handleClick = (event) => {
+      props.filterProjects(event);
+  }
 
   return (
     <div>
-      {/* individual project */}
         {/* image */}
         <div className="flex-row flex-wrap prj-img-container col-sm-4 col-md-12" onClick={() => setExpanded(!expanded)}>
           <img
@@ -30,7 +34,7 @@ function SingleProject({project}) {
             {tools.map((tool) => (
               <span
                 className="card-subtitle text-muted badge tool"
-                // onClick={props.func(tool)}
+                onClick={handleClick}
               >
                 {tool}
               </span>
