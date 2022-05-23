@@ -12,7 +12,7 @@ a {
 .close {
   border-radius: 10px;
   background-color: lightgrey;
-  margin: 5px;
+  margin-right: 10px;
   padding: 3px;
   cursor: pointer;
 }
@@ -30,15 +30,16 @@ header {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-color);
+  background-color: var(--link-color);
+  border: 0;
 }
 .hamburger:hover {
-  background-color: #37322fae;
+  background-color: rgba(25, 132, 159, 0.511);
 }
 .hamburger > * {
   height: 10px;
   width: 24px;
-  border-top: 2px solid rgba(255, 255, 255, 0.473);
+  border-top: 2px solid rgb(255, 255, 255);
   margin: auto;
 }
 .nav-item {
@@ -96,13 +97,22 @@ form {
 
 /* PROJECTS */
 .current-filter {
-  
+  margin: 5px;
+  background:rgba(25, 132, 159, 0.511);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10%;
 }
 .project {
   background-color: white;
 }
 .project-wrapper {
   flex-wrap: wrap;
+}
+.prj-img-container:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(50%);
+  transition: all 800ms ease;
 }
 .featured {
   background-color: var(--link-color);

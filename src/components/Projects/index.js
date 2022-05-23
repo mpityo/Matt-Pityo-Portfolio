@@ -1,26 +1,47 @@
 import React, { useState } from "react";
 import { FaGithubAlt } from "react-icons/fa";
 import { ImRocket } from "react-icons/im";
+import SingleProject from '../SingleProject';
 
 function Projects() {
   const [projects, setProjects] = useState([
     {
-      name: "Movie Vision",
-      github: "movie-vision",
-      deployment: "https://movie-vision-211.herokuapp.com/",
-      tools: [
-        "Javascript",
-        "Express",
-        "Node",
-        "SQL",
-        "Sequelize",
-        "QAuth",
-        "Handlebars",
-      ],
-      imgPath: "movie-vision.png",
-      description:
-        "Second group project. Share your thoughts on movies to share with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.",
-      featured: true,
+        name: "Depp Thoughts (A social media example application)",
+        github: "deep-thoughts",
+        deployment: "https://social-media-ex.herokuapp.com/",
+        tools: [
+          "Javascript",
+          "Express",
+          "Node",
+          "GraphQL",
+          "React",
+          "MongoDB",
+          "Mongoose",
+          "Authentication",
+          "Headers",
+        ],
+        imgPath: "deep-thoughts.png",
+        description:
+          "Utilizing all previous experience, create a social media application that emulates a mutli-page website as a SPA with React. Has all abilities of a social media application, packaged in a small form factor.",
+        featured: true,
+    },
+    {
+        name: "Movie Vision",
+        github: "movie-vision",
+        deployment: "https://movie-vision-211.herokuapp.com/",
+        tools: [
+          "Javascript",
+          "Express",
+          "Node",
+          "SQL",
+          "Sequelize",
+          "QAuth",
+          "Handlebars",
+        ],
+        imgPath: "movie-vision.png",
+        description:
+          "Second group project. Share your thoughts on movies to share with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.",
+        featured: true,
     },
     {
       name: "Zookeepr",
@@ -39,26 +60,6 @@ function Projects() {
       description:
         "Move a zoo from a physical database to a virtual one. Utilizing SQL, have the ability to view any animal or zookeeper, as well as add them.",
       featured: false,
-    },
-    {
-      name: "Depp Thoughts (A social media example application)",
-      github: "deep-thoughts",
-      deployment: "https://social-media-ex.herokuapp.com/",
-      tools: [
-        "Javascript",
-        "Express",
-        "Node",
-        "GraphQL",
-        "React",
-        "MongoDB",
-        "Mongoose",
-        "Authentication",
-        "Headers",
-      ],
-      imgPath: "deep-thoughts.png",
-      description:
-        "Utilizing all previous experience, create a social media application that emulates a mutli-page website as a SPA with React. Has all abilities of a social media application, packaged in a small form factor.",
-      featured: true,
     },
     {
       name: "Tech Blog",
@@ -128,13 +129,6 @@ function Projects() {
   ]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  const [hovered, setIsHovered] = useState(false);
-  function handleHover(event) {
-    console.log(hovered);
-    setIsHovered(!hovered);
-    console.log(hovered);
-  }
-
   const [filtered, setFiltered] = useState('');
 
   const filterProjects = event => {
@@ -150,69 +144,25 @@ function Projects() {
     setFilteredProjects(projects);
   }
 
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section className="mx-4">
       <div id="project-header">
         <h1>Projects</h1>
-        <h6>Let my experience speak for itself...</h6>
+        <h4>Let my experience speak for itself...</h4>
+        <h6>(click on any technology of interest to see projects with only that)</h6>
       </div>
       {filtered && (
-          <div className="current-filter"><span className="close" onClick={removeFilter}>x</span>{filtered}</div>
+          <div className="current-filter"><span className="close" onClick={removeFilter}>X</span>{filtered}</div>
       )}
       <div id="projects" className="">
           {/* all projects */}
-        <div className="project-wrapper d-flex flex-wrap">
-          {filteredProjects.map(({name,github,deployment,tools,imgPath,description,featured}) => (
-                // individual project
-              <div className="project d-flex align-self-start flex-wrap p-2 col-md-6 col-lg-4 col-xl-3">
-                  {/* image */}
-                <div className="flex-row flex-wrap prj-img-container col-sm-4 col-md-12 m-auto">
-                  <img
-                    className="prj-img img-fluid"
-                    src={`./assets/projects/${imgPath}`}
-                    alt=""
-                  />
-                </div>
-                  {/* card body */}
-                <div className="prj-body flex-row flex-wrap col-sm-8 m-auto">
-                    {/* title and if featured project */}
-                  <h5 className="card-title mb-0">{name}</h5>
-                  {featured && <h6 className="featured">Featured</h6>}
-
-                    {/* tools used */}
-                  <div className="mb-2 tool-wrapper">
-                    {tools.map((tool) => (
-                      <span className="card-subtitle text-muted badge tool"
-                        onClick={filterProjects}>
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-
-                    {/* description */}
-                  <p className="card-text">{description}</p>
-
-                    {/* footer */}
-                  <div className="prj-footer d-flex justify-content-around">
-                    <a
-                      href={`https://github.com/mpityo/${github}`}
-                      className="card-link flex-row"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaGithubAlt />
-                    </a>
-                    <a
-                      href={deployment}
-                      className="card-link flex-row"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ImRocket />
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <div className="project-wrapper d-flex flex-wrap align-items-start">
+          {filteredProjects.map((project) => (
+            <div className="project d-flex flex-wrap p-2 col-md-6 col-lg-4 col-xl-3">
+                <SingleProject project={project} />
+            </div>
             )
           )}
         </div>
