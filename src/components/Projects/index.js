@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { FaGithubAlt } from "react-icons/fa";
-import { ImRocket } from "react-icons/im";
 import SingleProject from '../SingleProject';
 
 function Projects() {
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
         name: "Depp Thoughts (A social media example application)",
         github: "deep-thoughts",
@@ -157,7 +155,7 @@ function Projects() {
           {/* all projects */}
         <div className="project-wrapper d-flex flex-wrap align-items-start">
           {filteredProjects.map((project) => (
-            <div className="project d-flex flex-wrap p-2 col-md-6 col-lg-4 col-xl-3">
+            <div className="project d-flex flex-wrap p-2 col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <SingleProject project={project} filterProjects={filterProjects} />
             </div>
             )

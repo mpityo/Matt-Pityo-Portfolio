@@ -26,7 +26,7 @@ function SingleProject(props) {
         {/* card body */}
         <div className="prj-body flex-row flex-wrap col-sm-8 m-auto w-100">
           {/* title and if featured project */}
-          <h4 className="card-title mb-0 mt-2">{name}</h4>
+          <h4 className="card-title mb-0">{name}</h4>
           {featured && <h6 className="featured mt-1">Featured</h6>}
 
           {/* tools used */}

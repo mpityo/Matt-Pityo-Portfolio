@@ -5,14 +5,14 @@ function About() {
     <section className="mx-4 about">
       <h1>Matt Pityo</h1>
       <div className="d-flex flex-wrap about-container mt-5">
-        <div className="col-md-4 flex-row bio-img-container">
+        <div className="flex-row bio-img-container">
           <img
             className="img-fluid rounded bio-img"
             src="./assets/bio-img.jpeg"
             alt="Matt looking up towards the sky on the beach"
           ></img>
         </div>
-        <div className="col-md-8 flex-row bio p-3">
+        <div className="col-md-8 flex-row bio m-auto">
           <p>
             I am a full stack developer looking for opportunities to connect and
             showcase my abilities and passion. With a decade in the customer
