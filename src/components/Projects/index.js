@@ -4,6 +4,26 @@ import SingleProject from '../SingleProject';
 function Projects() {
   const [projects] = useState([
     {
+      name: "DevHub",
+      github: "devhub",
+      deployment: "https://whispering-island-67364.herokuapp.com/",
+      tools: [
+        "Express",
+        "Node",
+        "GraphQL",
+        "React",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Chakra UI",
+        "Apollo"
+      ],
+      imgPath: "devhub.png",
+      description:
+        "Final project - work with four other students to create a full stack MERN application from scratch. Shop around from different website templates, input instructions, and send to a team of developers to create the website for you.",
+      featured: true,
+    },
+    {
         name: "Depp Thoughts (A social media example application)",
         github: "deep-thoughts",
         deployment: "https://social-media-ex.herokuapp.com/",
@@ -39,7 +59,7 @@ function Projects() {
         imgPath: "movie-vision.png",
         description:
           "Second group project. Share your thoughts on movies with your community. Write reviews, view others, find new movies to watch, and enjoy a secure browsing experience. This app has best in class authentication for user information, and built on a secure SQL database to keep information organized and easy to access.",
-        featured: true,
+        featured: false,
     },
     {
       name: "Zookeepr",
